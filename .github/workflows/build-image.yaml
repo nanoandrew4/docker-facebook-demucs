@@ -3,7 +3,8 @@ name: ci
 on:
   push:
     branches:
-      - 'issue#21-gh-action'
+      - 'main'
+      
 
 jobs:
   Build-Docker-Image:
@@ -52,6 +53,6 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
 #          tags: xserrat/facebook-demucs:${{ steps.github_ref_name_replacement_step.outputs.replaced }}
